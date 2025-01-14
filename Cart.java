@@ -56,6 +56,7 @@ public class Cart {
     }
 
     void deleteProduct(int id, Shop shop) {
+
         Product deletedProduct = null;
 
         Product[] newProducts = new Product[quantity - 1];

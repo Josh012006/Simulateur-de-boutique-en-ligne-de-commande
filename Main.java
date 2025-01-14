@@ -60,6 +60,12 @@ public class Main {
                     myCart.listProducts();
                     break;
                 case 4:
+
+                    if(myCart.quantity == 0) {
+                        System.out.println("Aucun produit dans le panier.");
+                        break;
+                    }
+
                     System.out.println("Veuillez préciser l'id du produit du panier à retirer du panier.");
 
                     int id2 = sc.nextInt();
