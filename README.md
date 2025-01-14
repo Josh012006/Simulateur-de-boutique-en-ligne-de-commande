@@ -3,11 +3,6 @@
 Il s'agit d'une simulation en ligne de commande de l'achat de produits dans une boutique.
 Ce programme fait l'usage des concepts de l'Orienté Objet et aussi d'un système de décisions.
 
-
-## Bugs
-
-Il contient encore quelques bugs à régler.
-
 ## Compilation
 
 ```

@@ -4,6 +4,7 @@ public class Cart {
     int quantity = 0;
 
     void addProduct (int id, int purchasedQuantity,  Shop shop) {
+
         for (Product product : shop.products) {
             if(product.id == id) {
                 if(product.quantity < purchasedQuantity) {
@@ -21,20 +22,22 @@ public class Cart {
                 }
 
                 if(!added) {
-                    Product[] newCartProducts = new Product[cartProducts.length + 1];
+                    Product[] newCartProducts = new Product[quantity + 1];
 
-                    for(int i = 0; i < cartProducts.length; i++) {
+                    for(int i = 0; i < quantity; i++) {
                         newCartProducts[i] = cartProducts[i];
                     }
 
-                    Product addedProduct = product;
-                    addedProduct.quantity = purchasedQuantity;
+                    Product addedProduct = new Product(product.id, product.name, product.price, purchasedQuantity);
+                    newCartProducts[quantity] = addedProduct;
 
-                    newCartProducts[cartProducts.length] = addedProduct;
+                    cartProducts = newCartProducts;
+
+                    quantity++;
                 }
 
                 product.quantity -= purchasedQuantity;
-                quantity++;
+
                 System.out.println("Produit ajouté!");
                 return;
             }
